@@ -1,12 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>생명과학 빅데이터 활용 프레젠테이션</title>
+    <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple website hosted on GitHub Pages.</p>
+    <div class="presentation-container">
+        
+        <section class="slide active" id="slide1">
+            <div class="content">
+                <p class="subtitle">[통과2] 생명과학 빅데이터 활용</p>
+                <h1 class="title">모둠 구성원 및 역할 안내</h1>
+                <div class="team-container">
+                    <div class="team-card">
+                        <div class="avatar">👨‍🔬</div>
+                        <h2 class="member-name">10106 공진우</h2>
+                        <ul class="role-list">
+                            <li>효소 설명 및 정보 조사</li>
+                            <li>효소의 구조 정리</li>
+                            <li>계통수 작성 및 PPT 제작</li>
+                        </ul>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar">🧑‍💻</div>
+                        <h2 class="member-name">10109 이상우</h2>
+                        <ul class="role-list">
+                            <li>효소가 촉매하는 반응 조사</li>
+                            <li>반응 정리 및 계통수 작성</li>
+                            <li>PPT 제작</li>
+                        </ul>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar">👨‍🎓</div>
+                        <h2 class="member-name">10112 정서후</h2>
+                        <ul class="role-list">
+                            <li>4종 아미노산 서열 조사</li>
+                            <li>아미노산 서열 정리</li>
+                            <li>계통수 작성 및 PPT 제작</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide next" id="slide2">
+            <div class="content split-layout">
+                <div class="left-panel">
+                    <h1 class="title">효소의 특징 (GAPDH)</h1>
+                    <div class="info-box">
+                        <h3>🔬 이름</h3>
+                        <p>glyceraldehyde 3-phosphate dehydrogenase [EC:1.2.1.12]</p>
+                        <h3>📍 위치 및 기본 역할</h3>
+                        <p>세포질에 위치하며, <strong>G3P를 1,3-BPG로 전환</strong>합니다. 이 과정에서 세포 주요 에너지 분자인 <strong>ATP</strong>와 <strong>NADH</strong>를 만들어내는 데 기여합니다.</p>
+                        <h3>🧬 추가 역할</h3>
+                        <p>세포가 스트레스를 받으면 핵 내부로 이동해 <strong>세포 사멸을 유도</strong>하거나, 손상된 <strong>DNA 복구 및 복제</strong>, 세포 골격 유지 역할을 수행합니다.</p>
+                    </div>
+                </div>
+                <div class="right-panel">
+                    <div id="model3d" class="viewer_3Dmoljs"></div>
+                    <p class="caption">※ 마우스로 드래그하여 회전하고 휠로 확대/축소할 수 있습니다. (PDB: 8G17)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide next" id="slide3">
+            <div class="sequence-bg" id="seq-bg"></div> <div class="content sequence-content">
+                <h1 class="title">4종의 아미노산 서열 비교</h1>
+                <p class="subtitle">~330여 개의 서열 중 핵심 25개 구간 분석 (생물 진화 과정 추적)</p>
+                
+                <div class="table-container" id="seq-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>종</th><th>시작</th><th>...</th><th>9</th><th>11</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>...</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>사람</td><td>9</td><td>...</td><td>L</td><td>T</td><td>F</td><td>N</td><td>S</td><td>G</td><td>K</td><td>V</td><td>D</td><td>...</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>생쥐</td><td>200</td><td>...</td><td>L</td><td>T</td><td>I</td><td>C</td><td>S</td><td>G</td><td>K</td><td>V</td><td>E</td><td>...</td>
+                            </tr>
+                            <tr>
+                                <td>북극곰</td><td>7</td><td>...</td><td>L</td><td>T</td><td>F</td><td>N</td><td>S</td><td>G</td><td>K</td><td>V</td><td>D</td><td>...</td>
+                            </tr>
+                            <tr class="outgroup">
+                                <td>닭(외부군)</td><td>8</td><td>...</td><td>Q</td><td>L</td><td>K</td><td>Q</td><td>Q</td><td>G</td><td>V</td><td>A</td><td>D</td><td>...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="insight-box">
+                        <p>💡 <strong>분석:</strong> 생쥐는 1, 2번 칸이 결실된 상태이며 다른 생물에 비해 189개 아미노산이 추가되어 시작 위치가 크게 다릅니다. 닭(외부군)은 붉은색 표기된 부분처럼 타 종과 큰 차이를 보입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide next" id="slide4">
+            <div class="content">
+                <h1 class="title">생물 계통수 결론 도출</h1>
+                <div class="tree-grid">
+                    <div class="tree-logic">
+                        <h3>✅ 최대 단순성의 원리</h3>
+                        <p>닭과 다른 종들이 갈라질 때 총 9개의 아미노산 서열 변이가 일어납니다. 후보 1의 경우 첫 줄기 변화 9회, 생쥐 변화 2회 및 결실 2회, 사람-북극곰 공통 줄기 2회로 <strong>총 15회 변이</strong>로 가장 적합합니다.</p>
+                        
+                        <h3 style="margin-top: 20px;">✅ 최대 개연성의 원리</h3>
+                        <p>아미노산 서열 일치도 조사 결과: <br>
+                        <strong>사람-북극곰(309개) > 생쥐-북극곰(117개) > 사람-생쥐(115개)</strong><br>
+                        따라서 닭이 가장 먼저 분화하였고, 사람과 북극곰이 가장 최근에 갈라진 것으로 유추됩니다.</p>
+                    </div>
+                    <div class="tree-result">
+                        <div class="final-tree">
+                            <svg viewBox="0 0 300 200" width="100%" height="100%">
+                                <path class="tree-line" d="M 20 180 L 280 180" /> <text x="250" y="170" fill="white">닭(외부군)</text>
+                                <path class="tree-line" d="M 50 180 L 50 50 L 280 50" /> <path class="tree-line" d="M 180 50 L 180 120 L 280 120" /> <text x="250" y="110" fill="white">생쥐</text>
+                                <path class="tree-line" d="M 220 50 L 220 20 L 280 20" /> <text x="250" y="15" fill="white">사람</text>
+                                <text x="250" y="40" fill="white">북극곰</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="controls">
+            <button onclick="prevSlide()">◀ 이전</button>
+            <span id="page-indicator">1 / 4</span>
+            <button onclick="nextSlide()">다음 ▶</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
