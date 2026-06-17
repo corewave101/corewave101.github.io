@@ -1,2 +1,2 @@
 # corewave101.github.io
-튜토리얼
+GAPDH에 대한 내용
